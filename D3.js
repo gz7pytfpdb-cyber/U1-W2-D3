@@ -125,22 +125,63 @@ for (let i = 0; i < starWarsCharacters.length; i++) {
 /* ESERCIZIO 3
   Seguendo i passaggi precedenti crea un nuovo array chiamato "femaleCharacters" e inserisci al suo interno tutti gli oggetti femminili.
 */
-
-const female = ["femaleCharacters"];
+/*
 for (let i = 0; i < starWarsCharacters.length; i++) {
-  console.log(charactersNames);
-  female.push(charactersNames.gender);
+  const character = starWarsCharacters[i];
+  if (character.gender === "female") {
+    console.log(character.name);
+  }
+  if (character.gender === "male") {
+    console.log(character.name);
+  }
 }
-
+*/
 /* ESERCIZIO 4
   Crea un oggetto "eyeColor" che abbia le seguenti proprietà: blue, yellow, brown, red, blue-gray.
   Ad ognuna di queste proprietà assegna come valore un array vuoto.
 */
 
+const eyeColor = {
+  blue: [],
+  yellow: [],
+  brown: [],
+  red: [],
+  blue_gray: [],
+};
+
 /* ESERCIZIO 5
   Utilizza uno switch statement per inserire uno ad uno gli oggetti dei personaggi di "starWarsCharacters" negli array relativi al colore degli occhi precedentemente creati.
   Ogni personaggio dovrà finire nell'array corrispondente al suo colore degli occhi (al valore della sua proprietà "eye_color").
 */
+
+for (let i = 0; i < starWarsCharacters.length; i++) {
+  const character = starWarsCharacters[i];
+
+  switch (character.eye_color) {
+    case "blue":
+      eyeColor.blue.push(character.name);
+      console.log(eyeColor.blue);
+      break;
+    case "yellow":
+      eyeColor.yellow.push(character.name);
+      console.log(eyeColor.yellow);
+      break;
+    case "brown":
+      eyeColor.brown.push(character.name);
+      console.log(eyeColor.brown);
+      break;
+    case "red":
+      eyeColor.red.push(character.name);
+      console.log(eyeColor.red);
+      break;
+    case "blue_gray":
+      eyeColor.blue_gray.push(character.name);
+      console.log(eyeColor.blue_gray);
+      break;
+    default:
+      console.log = "non ho capito";
+  }
+}
 
 /* ESERCIZIO 6
   Usa un while loop per calcolare la massa totale dell'equipaggio. Salvala in una variabile chiamata "crewMass".
@@ -161,7 +202,15 @@ for (let i = 0; i < starWarsCharacters.length; i++) {
 /* ESERCIZIO 8
   Usa un for loop per cambiare il valore della proprietà "gender" di alcuni personaggi dal valore "n/a" a "robot" (Tip: puoi effettuare la riassegnazione del valore corrispondente o creare un nuovo array)
 */
+/*
+for (let i = 0; i < starWarsCharacters.length; i++) {
+  const character = starWarsCharacters[i];
 
+  if (character.gender === "n/a") {
+    console.log(character.name, "ha detto si");
+  }
+}
+*/
 /* --EXTRA-- ESERCIZIO 9
   Utilizzando gli elementi presenti nell'array "femaleCharacters" rimuovi dall'array "charactersNames" le stringhe corrispondenti a personaggi con lo stesso nome.
   Una volta fatto crea un console.log per controllare la proprietà length di "charactersNames" prima e dopo l'operazione.
